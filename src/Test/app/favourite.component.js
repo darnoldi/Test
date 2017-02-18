@@ -9,21 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var course_service_1 = require("./course.service");
-var CoursesComponent = (function () {
-    function CoursesComponent(courseService) {
-        this.title = "Courses component title";
-        this.courses = courseService.getCourses();
+var FavouriteComponent = (function () {
+    function FavouriteComponent() {
+        this.isFavourite = false;
     }
-    CoursesComponent = __decorate([
+    FavouriteComponent.prototype.onClick = function () {
+        this.isFavourite = !this.isFavourite;
+    };
+    FavouriteComponent = __decorate([
         core_1.Component({
-            selector: 'courses',
-            template: "\n            <h2>Courses</h2>\n            {{ title }}\n<input type=\"text\" autoGrow />\n            <ul>\n                <li *ngFor=\"let course of courses\">\n                    {{ course }}\n                </li>\n            </ul>",
-            providers: [course_service_1.CourseService]
+            selector: 'favourite',
+            template: "\n        <h2>favourite</h2>\n        <i\n            class=\"glyphicon\" \n            [class.glyphicon-star-empty]=\"!isFavourite\"\n            [class.glyphicon-star]=\"isFavourite\"\n            (click)=\"onClick()\">\n        </i>\n        "
         }), 
-        __metadata('design:paramtypes', [course_service_1.CourseService])
-    ], CoursesComponent);
-    return CoursesComponent;
+        __metadata('design:paramtypes', [])
+    ], FavouriteComponent);
+    return FavouriteComponent;
 }());
-exports.CoursesComponent = CoursesComponent;
-//# sourceMappingURL=courses.component.js.map
+exports.FavouriteComponent = FavouriteComponent;
+//# sourceMappingURL=favourite.component.js.map

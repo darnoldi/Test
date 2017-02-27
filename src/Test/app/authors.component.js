@@ -8,22 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var author_service_1 = require("./author.service");
 var AuthorsComponent = (function () {
     function AuthorsComponent(authorService) {
         this.title = "Authors component title";
         this.authors = authorService.getAuthors();
     }
-    AuthorsComponent = __decorate([
-        core_1.Component({
-            selector: 'authors',
-            template: "\n            <h2>Authors</h2>\n            {{ title }}\n            <ul>\n                <li *ngFor=\"let author of authors\">\n                    {{ author }}\n                </li>\n            </ul>",
-            providers: [author_service_1.AuthorService]
-        }), 
-        __metadata('design:paramtypes', [author_service_1.AuthorService])
-    ], AuthorsComponent);
     return AuthorsComponent;
 }());
+AuthorsComponent = __decorate([
+    core_1.Component({
+        selector: 'authors',
+        template: "\n            <h2>Authors</h2>\n            {{ title }}\n            <ul>\n                <li *ngFor=\"let author of authors\">\n                    {{ author }}\n                </li>\n            </ul>",
+        providers: [author_service_1.AuthorService]
+    }),
+    __metadata("design:paramtypes", [author_service_1.AuthorService])
+], AuthorsComponent);
 exports.AuthorsComponent = AuthorsComponent;
 //# sourceMappingURL=authors.component.js.map

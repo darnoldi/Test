@@ -1,4 +1,4 @@
-﻿import {Component} from '@angular/core';  
+﻿import {Component, Input, Output, EventEmitter} from '@angular/core';  
 
 @Component ({
     selector: 'favourite',
@@ -10,13 +10,22 @@
             [class.glyphicon-star]="isFavourite"
             (click)="onClick()">
         </i>
-        `
+        `,
+    styles: [`
+        .glyphicon-star {
+            color: red;
+        }
+    `]
 })
 
 export class FavouriteComponent {
-    isFavourite = false;
+    @Input() isFavourite = false;
+
+    @Output() change = new EventEmitter();
+
 
     onClick(){
         this.isFavourite = !this.isFavourite;
+        this.change.emit({ newValue: this.isFavourite });
     }
 }

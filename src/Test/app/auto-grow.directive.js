@@ -20,17 +20,17 @@ var AutoGrowDirective = (function () {
     AutoGrowDirective.prototype.onBlur = function () {
         this.renderer.setElementStyle(this.el.nativeElement, 'width', '120');
     };
-    AutoGrowDirective = __decorate([
-        core_1.Directive({
-            selector: '[autoGrow]',
-            host: {
-                '(focus)': 'onFocus()',
-                '(blur)': 'onBlur()'
-            }
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
-    ], AutoGrowDirective);
     return AutoGrowDirective;
 }());
+AutoGrowDirective = __decorate([
+    core_1.Directive({
+        selector: '[autoGrow]',
+        host: {
+            '(focus)': 'onFocus()',
+            '(blur)': 'onBlur()'
+        }
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef, core_1.Renderer])
+], AutoGrowDirective);
 exports.AutoGrowDirective = AutoGrowDirective;
 //# sourceMappingURL=auto-grow.directive.js.map

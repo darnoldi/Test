@@ -8,22 +8,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var FavouriteComponent = (function () {
     function FavouriteComponent() {
         this.isFavourite = false;
+        this.change = new core_1.EventEmitter();
     }
     FavouriteComponent.prototype.onClick = function () {
         this.isFavourite = !this.isFavourite;
+        this.change.emit({ newValue: this.isFavourite });
     };
-    FavouriteComponent = __decorate([
-        core_1.Component({
-            selector: 'favourite',
-            template: "\n        <h2>favourite</h2>\n        <i\n            class=\"glyphicon\" \n            [class.glyphicon-star-empty]=\"!isFavourite\"\n            [class.glyphicon-star]=\"isFavourite\"\n            (click)=\"onClick()\">\n        </i>\n        "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], FavouriteComponent);
     return FavouriteComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], FavouriteComponent.prototype, "isFavourite", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], FavouriteComponent.prototype, "change", void 0);
+FavouriteComponent = __decorate([
+    core_1.Component({
+        selector: 'favourite',
+        template: "\n        <h2>favourite</h2>\n        <i\n            class=\"glyphicon\" \n            [class.glyphicon-star-empty]=\"!isFavourite\"\n            [class.glyphicon-star]=\"isFavourite\"\n            (click)=\"onClick()\">\n        </i>\n        ",
+        styles: ["\n        .glyphicon-star {\n            color: red;\n        }\n    "]
+    })
+], FavouriteComponent);
 exports.FavouriteComponent = FavouriteComponent;
 //# sourceMappingURL=favourite.component.js.map

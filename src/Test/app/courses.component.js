@@ -8,22 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var course_service_1 = require("./course.service");
 var CoursesComponent = (function () {
     function CoursesComponent(courseService) {
         this.title = "Courses component title";
         this.courses = courseService.getCourses();
     }
-    CoursesComponent = __decorate([
-        core_1.Component({
-            selector: 'courses',
-            template: "\n            <h2>Courses</h2>\n            {{ title }}\n<input type=\"text\" autoGrow />\n            <ul>\n                <li *ngFor=\"let course of courses\">\n                    {{ course }}\n                </li>\n            </ul>",
-            providers: [course_service_1.CourseService]
-        }), 
-        __metadata('design:paramtypes', [course_service_1.CourseService])
-    ], CoursesComponent);
     return CoursesComponent;
 }());
+CoursesComponent = __decorate([
+    core_1.Component({
+        selector: 'courses',
+        template: "\n            <h2>Courses</h2>\n            {{ title }}\n<input type=\"text\" autoGrow />\n            <ul>\n                <li *ngFor=\"let course of courses\">\n                    {{ course }}\n                </li>\n            </ul>",
+        providers: [course_service_1.CourseService]
+    }),
+    __metadata("design:paramtypes", [course_service_1.CourseService])
+], CoursesComponent);
 exports.CoursesComponent = CoursesComponent;
 //# sourceMappingURL=courses.component.js.map
